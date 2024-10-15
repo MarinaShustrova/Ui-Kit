@@ -1,0 +1,56 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# testing
+/coverage
+
+*chromatic.config.json
+
+# production
+/build
+
+# misc
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.npmrc
+
+# Logs
+logs
+*.log
+pnpm-debug.log*
+lerna-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OSX
+#
+.DS_Store
+
+# Editor directories and files
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# node.js
+#
+node_modules
+npm-debug.log
+yarn-error.log
+
+dist
+dist-ssr
+*.local
+
+*storybook.log

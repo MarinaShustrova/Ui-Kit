@@ -1,0 +1,12 @@
+**/.git
+**/node_modules
+
+
+
+# pretter doesn't fully support helm: https://github.com/prettier/prettier/issues/6517
+.helm
+
+# artefacts
+coverage
+.nyc_output
+**/dist
