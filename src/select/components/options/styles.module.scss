@@ -1,0 +1,27 @@
+@use '../../../theme/units';
+@use '../../../theme/colors';
+@use '../../../theme/shadows';
+
+.no-padding {
+    padding: 0;
+}
+
+.list-wrapper {
+    padding: units.$space-xs 0;
+    margin: 0;
+    background-color: colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    box-shadow: shadows.$shadow-l;
+
+    &.with-footer {
+        padding: units.$space-xs 0 0;
+        margin: units.$space-3xs 0 0;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: units.$space-m;
+    border-top: units.$border-width-s solid colors.$neutral-93;
+}

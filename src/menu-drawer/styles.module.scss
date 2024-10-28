@@ -1,0 +1,62 @@
+.menuDrawer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    width: 80px;
+    padding: 10px 0px;
+    gap: 24px;
+
+    .menuItem {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, min-width 0.3s ease, padding-left 0.3s ease;
+        min-width: 80px;
+        max-width: 300px;
+        background-color: transparent;
+
+        &:hover {
+            background-color: #d5f1c8;
+            min-width: 250px;
+        }
+
+        .iconWrapper {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .textWrapper {
+            margin-left: 30px;
+            background-color: #d5f1c8;
+            color: #000000;
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 4px;
+            white-space: normal;
+            word-wrap: break-word;
+            opacity: 0;
+            visibility: hidden;
+            flex-grow: 1;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        &:hover .textWrapper {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:hover .iconWrapper {
+            transform: scale(1.1);
+        }
+    }
+}

@@ -1,0 +1,6 @@
+// Данная конструкция необходима для отключения смещения лейбла в инпуте
+.input label > span > span {
+    top: 50% !important;
+    font-size: 14px !important;
+    transform: translateY(-50%) !important;
+}

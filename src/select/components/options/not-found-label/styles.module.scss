@@ -1,0 +1,13 @@
+@use '../../../../theme/units';
+@use '../../../../theme/colors';
+
+.label {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    padding: units.$space-s units.$space-m;
+
+    .text {
+        color: colors.$neutral-50;
+    }
+}

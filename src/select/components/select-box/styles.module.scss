@@ -1,0 +1,61 @@
+@use '../../../theme/z-index';
+@use '../../../theme/colors';
+@use '../../../theme/units';
+@use '../../../theme/mixins';
+@use '../../../grid/responsive';
+
+.wrapper {
+    position: relative;
+    width: 100%;
+
+    @include responsive.media-up(responsive.$tablet) {
+        max-width: 640px;
+    }
+
+    &:not(.searchable) {
+        caret-color: transparent;
+    }
+
+    &.expanded {
+        border-color: colors.$neutral-80;
+    }
+
+    @include mixins.hover {
+        &:not(.searchable) label {
+            cursor: pointer;
+
+            & input {
+                cursor: pointer;
+            }
+        }
+
+        &.searchable label,
+        input {
+            cursor: text;
+        }
+
+        &.disabled label {
+            cursor: default;
+
+            & input {
+                cursor: default;
+            }
+        }
+    }
+}
+
+.dropdown {
+    position: absolute;
+    z-index: z-index.zIndex('dropdown');
+    width: 100%;
+
+    &.bottom {
+        top: 100%;
+        margin-top: units.$space-3xs;
+    }
+
+    &.top {
+        bottom: 100%;
+        margin-bottom: units.$space-3xs;
+    }
+}

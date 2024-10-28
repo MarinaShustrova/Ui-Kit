@@ -1,0 +1,13 @@
+/* Function returns lighten or darken color:
+* $color: #F7C492;
+* .container {
+*    background-color: getShade($color, 1);
+*    color: getShade($color, -1);
+* } */
+
+@function getShade($hex, $shade) {
+    $hue: hue($hex);
+    $saturation: saturation($hex);
+    $lightness: lightness($hex);
+    @return hsl($hue, $saturation, $lightness + $shade * 2);
+}

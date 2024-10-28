@@ -1,0 +1,19 @@
+.scroll {
+    max-height: 250px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.infinite-list-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.infinite-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}

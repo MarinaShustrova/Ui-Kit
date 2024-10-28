@@ -1,0 +1,45 @@
+// .divider {
+//     display: flex;
+//     align-items: center;
+//     position: relative;
+// }
+
+// .dashed {
+//     border-top: 1px dashed;
+// }
+
+// .solid {
+//     border-top: 1px solid;
+// }
+
+.divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.solid {
+    background-color: #000; // Сплошная линия (цвет)
+}
+
+.dashed {
+    border-bottom: 1px dashed #000; // Пунктирная линия
+}
+
+.text {
+    padding: 0;
+    white-space: nowrap; // Запрещаем перенос текста
+}
+
+.line {
+    flex-grow: 1;
+    height: 1px; // Толщина линии
+}
+
+.solid .line {
+    background-color: #000; // Сплошная линия
+}
+
+.dashed .line {
+    border-bottom: 1px dashed #000; // Пунктирная линия вместо background-color
+}

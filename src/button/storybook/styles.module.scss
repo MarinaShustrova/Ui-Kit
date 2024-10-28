@@ -1,0 +1,16 @@
+.button-sizes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.button-type-container {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 8px;
+
+    &:last-child {
+        margin-bottom: 20px;
+    }
+}

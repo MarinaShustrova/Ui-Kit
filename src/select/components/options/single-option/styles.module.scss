@@ -1,0 +1,43 @@
+@use '../../../../theme/units';
+@use '../../../../theme/colors';
+@use '../../../../theme/mixins';
+
+.option {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    padding: units.$space-s units.$space-m;
+    color: colors.$neutral-10;
+    cursor: pointer;
+    font-size: 14px;
+    outline-offset: -3px;
+
+    @include mixins.hover {
+        background-color: rgba(245, 245, 245, 1);
+    }
+
+    &.has-a11y-focus {
+        @include mixins.focus {
+            background-color: colors.$primary-95;
+        }
+    }
+
+    &.disabled {
+        background-color: transparent;
+        color: rgb(27, 25, 25);
+        cursor: default;
+    }
+}
+
+.label {
+    flex: 1;
+}
+
+.additional-label {
+    @include mixins.ellipsis-text;
+
+    &.disabled,
+    &.disabled * {
+        color: colors.$neutral-70 !important;
+    }
+}

@@ -1,0 +1,29 @@
+@use '../../colors';
+@use '../../units';
+
+.accordion {
+    border: units.$border-width-s solid colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    padding: units.$space-s;
+
+    &:not(:last-child) {
+        margin-bottom: units.$space-l;
+    }
+}
+
+.table-row {
+    cursor: pointer;
+}
+
+.color {
+    width: 25px;
+    height: 25px;
+    border: units.$border-width-s solid colors.$neutral-100;
+}
+.light-theme {
+    color: black; // Цвет текста для светлой темы
+}
+
+.dark-theme {
+    color: white; // Цвет текста для темной темы
+}

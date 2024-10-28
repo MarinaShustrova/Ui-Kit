@@ -1,0 +1,59 @@
+@use 'sass:map';
+
+$breakpoints: (
+    xxs: (
+        margin: 16px,
+        offset: 0,
+        min-width: 320px,
+        max-width: 767.9px,
+        columns: 6,
+        gutter: 16px,
+    ),
+    xs: (
+        margin: 16px,
+        offset: 76px,
+        min-width: 768px,
+        max-width: 1023.9px,
+        columns: 12,
+        gutter: 16px,
+    ),
+    s: (
+        margin: 24px,
+        offset: 84px,
+        min-width: 1024px,
+        max-width: 1279.9px,
+        columns: 12,
+        gutter: 20px,
+    ),
+    m: (
+        margin: 28px,
+        offset: 248px,
+        min-width: 1280px,
+        max-width: 1439.9px,
+        columns: 12,
+        gutter: 20px,
+    ),
+    l: (
+        margin: 36px,
+        offset: 248px,
+        min-width: 1440px,
+        max-width: 1919.9px,
+        columns: 12,
+        gutter: 20px,
+    ),
+    xl: (
+        margin: 84px,
+        offset: 248px,
+        min-width: 1920px,
+        max-width: 2559.9px,
+        columns: 12,
+        gutter: 20px,
+    ),
+    xxl: (
+        margin: 320px,
+        offset: 340px,
+        min-width: 2560px,
+        columns: 16,
+        gutter: 20px,
+    ),
+);

@@ -1,0 +1,55 @@
+@use './colors';
+@use './units';
+@use '../grid/responsive';
+@use './mixins';
+
+* {
+    @supports (scrollbar-width: thin) and (scrollbar-color: colors.$neutral-80 transparent) {
+        scrollbar-color: colors.$neutral-80 transparent;
+        scrollbar-width: thin;
+
+        @include mixins.hover {
+            scrollbar-color: colors.$neutral-70 transparent;
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            scrollbar-color: colors.$neutral-50 transparent;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        $scrollbar-mobile-width: 4px;
+        $scrollbar-width: 8px;
+
+        margin: -10px;
+        width: $scrollbar-mobile-width;
+        background-color: transparent;
+
+        @include responsive.media-up(responsive.$tablet) {
+            width: $scrollbar-width;
+
+            &:horizontal {
+                height: $scrollbar-width;
+            }
+        }
+
+        &:horizontal {
+            height: $scrollbar-mobile-width;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: colors.$neutral-80;
+        border-radius: units.$border-radius-s;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        @include mixins.hover {
+            background-color: colors.$neutral-70;
+        }
+    }
+
+    &::-webkit-scrollbar-thumb:active {
+        background-color: colors.$neutral-50;
+    }
+}

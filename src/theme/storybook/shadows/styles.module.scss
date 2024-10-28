@@ -1,0 +1,37 @@
+@use '../../shadows';
+@use '../../units';
+
+.shadows-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: units.$space-l;
+}
+
+.shadow-box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.shadow-s {
+    box-shadow: shadows.$shadow-s;
+}
+
+.shadow-m {
+    box-shadow: shadows.$shadow-m;
+}
+
+.shadow-l {
+    box-shadow: shadows.$shadow-l;
+}
+
+.shadow-xl {
+    box-shadow: shadows.$shadow-xl;
+}
+
+.shadow-xxl {
+    box-shadow: shadows.$shadow-xxl;
+}

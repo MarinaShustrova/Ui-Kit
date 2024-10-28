@@ -1,0 +1,94 @@
+$font-family: 'Roboto', sans-serif;
+
+$weight-thin: 100;
+$weight-extralight: 200;
+$weight-light: 300;
+$weight-regular: 400;
+$weight-medium: 500;
+$weight-semibold: 600;
+$weight-bold: 700;
+$weight-extrabold: 800;
+$weight-black: 900;
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Thin.ttf') format('ttf');
+    font-weight: $weight-thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-ThinItalic.ttf') format('ttf');
+    font-weight: $weight-thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Light.ttf') format('ttf');
+    font-weight: $weight-light;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-LightItalic.ttf') format('ttf');
+    font-weight: $weight-thin;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Regular.ttf') format('ttf');
+    font-weight: $weight-regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Medium.ttf') format('ttf');
+    font-weight: $weight-medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-MediumItalic.ttf') format('ttf');
+    font-weight: $weight-medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Bold.ttf') format('ttf');
+    font-weight: $weight-bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-BoldItalic.ttf') format('ttf');
+    font-weight: $weight-extrabold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Italic.ttf') format('ttf');
+    font-weight: $weight-extrabold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-Black.ttf') format('ttf');
+    font-weight: $weight-black;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('assets/fonts/Roboto-BlackItalic.ttf') format('ttf');
+    font-weight: $weight-black;
+    font-style: normal;
+}

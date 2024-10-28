@@ -1,0 +1,9 @@
+@use '../../grid/responsive';
+
+.input {
+    width: 100%;
+
+    @include responsive.media-up(responsive.$tablet) {
+        width: 300px;
+    }
+}

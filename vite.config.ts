@@ -34,7 +34,7 @@ export default defineConfig({
     build: {
         lib: {
             entry: resolve(__dirname, 'src/index.tsx'),
-            name: 'corporate-ui-kit',
+            name: 'ui-kit',
             formats: ['es'],
             fileName: 'index',
         },

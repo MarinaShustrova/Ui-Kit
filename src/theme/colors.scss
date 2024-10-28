@@ -1,0 +1,197 @@
+// Темная тема - Нейтральные цвета
+$neutral-10: #171a1c; // Темный фон
+$neutral-20: #2f3337; // Глубокий серый
+$neutral-30: #464d53; // Серый 1
+$neutral-50: #75808a; // Серый 2
+$neutral-70: #acb3b9; // Светло-серый 1
+$neutral-80: #c8ccd0; // Светло-серый 2
+$neutral-90: #e3e5e8; // Очень светлый серый
+$neutral-93: #ecedef; // Почти белый
+$neutral-97: #f6f7f8; // Почти белый 2
+$neutral-99: #fcfcfd; // Почти белый 3
+$neutral-100: #ffffff; // Белый
+
+// Темная тема - Основные цвета
+$primary-25: #038605; // Темно-зеленый
+$primary-35: #2d6b2f; // Зеленый 1
+$primary-45: #40a642; // Зеленый 2
+$primary-55: #5abf5c; // Зеленый 3
+$primary-65: #7ecd80; // Светло-зеленый 1
+$primary-75: #a3dba4; // Светло-зеленый 2
+$primary-85: #c8e9c9; // Очень светлый зеленый
+$primary-95: #edf8ed; // Очень светлый зеленый 2
+$primary-97: #f4fbf4; // Почти белый
+
+// Темная тема - Цвета опасности
+$danger-25: #780808; // Темно-красный
+$danger-35: #a80b0b; // Красный 1
+$danger-45: #d80e0e; // Красный 2
+$danger-55: #f12727; // Красный 3
+$danger-65: #f45757; // Светло-красный 1
+$danger-75: #f78787; // Светло-красный 2
+$danger-85: #fab7b7; // Очень светлый красный
+$danger-95: #fde7e7; // Очень светлый красный 2
+$danger-97: #fef1f1; // Почти белый
+
+// Темная тема - Важные цвета
+$important-25: #7f3d00; // Темно-оранжевый
+$important-35: #b25500; // Оранжевый 1
+$important-45: #e56e00; // Оранжевый 2
+$important-55: #ff881b; // Оранжевый 3
+$important-65: #ffa24c; // Светло-оранжевый 1
+$important-75: #ffbc7f; // Светло-оранжевый 2
+$important-85: #ffd7b3; // Очень светлый оранжевый
+$important-95: #fff2e5; // Очень светлый оранжевый 2
+$important-97: #fff8f1; // Почти белый
+
+// Темная тема - Предупреждения
+$warning-25: #806500; // Темно-желтый
+$warning-35: #b28d00; // Желтый 1
+$warning-45: #e5b600; // Желтый 2
+$warning-55: #ffcf1a; // Желтый 3
+$warning-65: #ffda4c; // Светло-желтый 1
+$warning-75: #ffe480; // Светло-желтый 2
+$warning-85: #ffefb3; // Очень светлый желтый
+$warning-95: #fff9e5; // Очень светлый желтый 2
+$warning-97: #ffffe5; // Почти белый
+
+// Темная тема - Информативные цвета
+$informative-25: #003b80; // Темно-синий
+$informative-35: #0052b2; // Синий 1
+$informative-45: #006ae5; // Синий 2
+$informative-55: #1a83ff; // Синий 3
+$informative-65: #4c9fff; // Светло-синий 1
+$informative-75: #80baff; // Светло-синий 2
+$informative-85: #b3d6ff; // Очень светлый синий
+$informative-95: #e5f1ff; // Очень светлый синий 2
+$informative-97: #f0f7ff; // Почти белый
+
+// Темная тема - Общие цвета
+$color-general-default: #42ab44; // Зеленый по умолчанию
+$color-general-hover: #248341; // Зеленый при наведении
+$color-general-active: #245f34; // Зеленый при активном состоянии
+
+// Темная тема - Общие цвета (светлый)
+$color-general-light-default: #e2f6e2; // Светло-зеленый по умолчанию
+$color-general-light-hover: #d7f5d7; // Светло-зеленый при наведении
+$color-general-light-active: #addcad; // Светло-зеленый при активном состоянии
+
+// Темная тема - Серые цвета
+$color-gray-text: #1c1c1c; // Текст серый
+$color-gray-background: #ffffff; // Фон серый
+$color-gray-label: #7d7e7f; // Метка серый
+$color-gray-subtitle: #b0b1b2; // Подзаголовок серый
+$color-gray-stroke: #c9cacc; // Обводка серый
+$color-gray-select: #e2e4e5; // Выбор серый
+$color-gray-header: #f5f7f9; // Заголовок серый
+$color-gray-bg-active: #ebedf0; // Фон активности серый
+
+// Темная тема - Акценты
+$color-accent-danger: #f23030; // Опасный акцент
+$color-accent-caution: #ff881b; // Предупредительный акцент
+$color-accent-warning: #ffcb05; // Предупреждающий акцент
+$color-accent-blue: #09caf6; // Синий акцент
+
+// Темная тема - Прилагательные
+$color-adjective-light-blue: #e5f1ff; // Светло-синий прилагательный
+$color-adjective-light-green: #e2f6e2; // Светло-зеленый прилагательный
+$color-adjective-light-orange: #fdf1e5; // Светло-оранжевый прилагательный
+$color-adjective-light-red: #ffecec; // Светло-красный прилагательный
+$color-adjective-red: #ffdddd; // Красный прилагательный
+$color-adjective-orange: #ffe6cf; // Оранжевый прилагательный
+
+// Светлая тема - Нейтральные цвета
+$neutral-10: #fcfcfd; // Белый
+$neutral-20: #f6f7f8; // Очень светлый серый
+$neutral-30: #ecedef; // Почти белый
+$neutral-50: #e3e5e8; // Светло-серый 1
+$neutral-70: #c8ccd0; // Светло-серый 2
+$neutral-80: #acb3b9; // Светло-серый 3
+$neutral-90: #75808a; // Серый 1
+$neutral-93: #464d53; // Серый 2
+$neutral-97: #2f3337; // Глубокий серый
+$neutral-99: #171a1c; // Темный фон
+
+// Светлая тема - Основные цвета
+$primary-25: #edf8ed; // Очень светлый зеленый
+$primary-35: #c8e9c9; // Очень светлый зеленый 2
+$primary-45: #a3dba4; // Светло-зеленый 1
+$primary-55: #7ecd80; // Светло-зеленый 2
+$primary-65: #5abf5c; // Зеленый 3
+$primary-75: #40a642; // Зеленый 2
+$primary-85: #328134; // Зеленый 1
+$primary-95: #245c25; // Темно-зеленый
+
+// Светлая тема - Цвета опасности
+$danger-25: #fde7e7; // Очень светлый красный
+$danger-35: #fab7b7; // Очень светлый красный 2
+$danger-45: #f78787; // Светло-красный 1
+$danger-55: #f45757; // Светло-красный 2
+$danger-65: #f12727; // Красный 3
+$danger-75: #d80e0e; // Красный 2
+$danger-85: #a80b0b; // Красный 1
+$danger-95: #780808; // Темно-красный
+
+// Светлая тема - Важные цвета
+$important-25: #fff2e5; // Очень светлый оранжевый
+$important-35: #ffd7b3; // Очень светлый оранжевый 2
+$important-45: #ffbc7f; // Светло-оранжевый 1
+$important-55: #ffa24c; // Светло-оранжевый 2
+$important-65: #ff881b; // Оранжевый 3
+$important-75: #e56e00; // Оранжевый 2
+$important-85: #b25500; // Оранжевый 1
+$important-95: #7f3d00; // Темно-оранжевый
+
+// Светлая тема - Предупреждения
+$warning-25: #fff9e5; // Очень светлый желтый
+$warning-35: #ffefb3; // Очень светлый желтый 2
+$warning-45: #ffe480; // Светло-желтый 1
+$warning-55: #ffda4c; // Светло-желтый 2
+$warning-65: #ffcf1a; // Желтый 3
+$warning-75: #e5b600; // Желтый 2
+$warning-85: #b28d00; // Желтый 1
+$warning-95: #806500; // Темно-желтый
+
+// Светлая тема - Информативные цвета
+$informative-25: #e5f1ff; // Очень светлый синий
+$informative-35: #b3d6ff; // Очень светлый синий 2
+$informative-45: #80baff; // Светло-синий 1
+$informative-55: #4c9fff; // Светло-синий 2
+$informative-65: #1a83ff; // Синий 3
+$informative-75: #006ae5; // Синий 2
+$informative-85: #0052b2; // Синий 1
+$informative-95: #003b80; // Темно-синий
+
+// Светлая тема - Общие цвета
+$color-general-default: #e2f6e2; // Светло-зеленый по умолчанию
+$color-general-hover: #d7f5d7; // Светло-зеленый при наведении
+$color-general-active: #addcad; // Светло-зеленый при активном состоянии
+
+// Светлая тема - Общие цвета (темный)
+$color-general-light-default: #42ab44; // Зеленый по умолчанию
+$color-general-light-hover: #248341; // Зеленый при наведении
+$color-general-light-active: #245f34; // Зеленый при активном состоянии
+
+// Светлая тема - Серые цвета
+$color-gray-text: #1c1c1c; // Текст серый
+$color-gray-background: #ffffff; // Фон серый
+$color-gray-label: #7d7e7f; // Метка серый
+$color-gray-subtitle: #b0b1b2; // Подзаголовок серый
+$color-gray-stroke: #c9cacc; // Обводка серый
+$color-gray-select: #e2e4e5; // Выбор серый
+$color-gray-header: #f5f7f9; // Заголовок серый
+$color-gray-bg-active: #ebedf0; // Фон активности серый
+
+// Светлая тема - Акценты
+$color-accent-danger: #f23030; // Опасный акцент
+$color-accent-caution: #ff881b; // Предупредительный акцент
+$color-accent-warning: #ffcb05; // Предупреждающий акцент
+$color-accent-blue: #09caf6; // Синий акцент
+
+// Светлая тема - Прилагательные
+$color-adjective-light-blue: #e5f1ff; // Светло-синий прилагательный
+$color-adjective-light-green: #e2f6e2; // Светло-зеленый прилагательный
+$color-adjective-light-orange: #fdf1e5; // Светло-оранжевый прилагательный
+$color-adjective-light-red: #ffecec; // Светло-красный прилагательный
+$color-adjective-red: #ffdddd; // Красный прилагательный
+$color-adjective-orange: #ffe6cf; // Оранжевый прилагательный

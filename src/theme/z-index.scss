@@ -1,0 +1,30 @@
+@use 'sass:map';
+
+$layers: (
+    'layout': 0,
+    'dropdown': 10e2,
+    'tooltip': 10e3,
+    'overlay': 10e4,
+    'modal': 10e5,
+    'notification': 10e6,
+);
+
+@function zIndex($layer: 'layout', $offset: 0) {
+    $z-index: map.get($layers, $layer);
+    $multiplier: 10;
+
+    $min-offset: 0;
+    $max-offset: $z-index * $multiplier;
+
+    @if ($layer == 'layout') {
+        $max-offset: 1000;
+    }
+
+    $offsetIsOutOfScope: $offset >= $max-offset or $offset < $min-offset;
+
+    @if ($offsetIsOutOfScope) {
+        @error "The provided offset #{$offset} exceeds the allowed layer boundaries. Change the offset or use another layer.";
+    } @else {
+        @return $z-index + $offset;
+    }
+}

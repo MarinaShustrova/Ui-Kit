@@ -1,0 +1,511 @@
+@use '../theme/shadows';
+@use '../theme/colors';
+@use '../theme/units';
+@use '../theme/mixins';
+@use '../theme/fonts';
+@use '../grid/responsive';
+
+.button {
+    display: flex;
+    position: relative;
+    min-width: 136px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    border: units.$border-width-m solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 400;
+    font-family: Roboto;
+    font-size: 15px;
+    line-height: 22px;
+    text-decoration: none;
+
+    @include responsive.media-up(responsive.$desktop) {
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @include responsive.media-up(responsive.$xl) {
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+$loader-s: 32px;
+$loader-m: 36px;
+$loader-l: 40px;
+$loader-xl: 48px;
+
+@mixin button-color($color) {
+    color: $color;
+
+}
+
+@mixin loaderSize($size) {
+    width: $size;
+    height: $size;
+}
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$neutral-100;
+    border-radius: units.$border-radius-m;
+}
+
+.loader {
+    position: relative;
+    border-radius: 50%;
+    animation: rotate 1s infinite ease-in-out;
+    background: radial-gradient(farthest-side, colors.$neutral-70 94%, #0000) top/units.$space-2xs
+            units.$space-2xs no-repeat,
+        conic-gradient(colors.$neutral-70, colors.$neutral-100 75%);
+
+    &::after {
+        display: flex;
+        position: absolute;
+        content: '';
+        top: units.$space-2xs;
+        bottom: units.$space-2xs;
+        left: units.$space-2xs;
+        right: units.$space-2xs;
+        background: colors.$neutral-100;
+        border-radius: 50%;
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(-360deg);
+        }
+    }
+}
+
+.icon {
+    height: 15px;
+    width: 17px;
+    fill: white !important; 
+    margin-right: 8px;
+    display: inline-flex; 
+    align-items: center; 
+}
+
+.primary {
+    background-color: #237804;
+    @include button-color(colors.$neutral-100);
+
+    @include mixins.hover {
+        background-color: #135200;
+    }
+
+    &:active {
+        background-color: #237804;
+    }
+
+    &:disabled {
+        background-color: #135200;
+        cursor: default;
+
+        @include button-color(colors.$neutral-50);
+    }
+
+    .loader-wrapper {
+        background-color: colors.$neutral-97;
+    }
+
+    .loader {
+        background: radial-gradient(farthest-side, colors.$neutral-30 94%, #0000)
+                top/units.$space-2xs units.$space-2xs no-repeat,
+            conic-gradient(colors.$neutral-30, colors.$neutral-97 75%);
+
+        &::after {
+            background: colors.$neutral-97;
+        }
+    }
+}
+
+.secondary {
+    background-color: #ffffff;
+    border: 1px solid rgba(35, 120, 4, 1);
+
+    @include button-color(rgba(35, 120, 4, 1));
+
+    @include mixins.hover {
+        background-color: #ffffff;
+        border: 1px solid rgba(19, 82, 0, 1);
+
+        @include button-color( rgba(19, 82, 0, 1));
+    }
+
+    &:active {
+        background-color: #ffffff;
+        border: 1px solid rgba(35, 120, 4, 1);
+
+        @include button-color(#ffffff);
+    }
+
+    &:disabled {
+        background-color: rgba(245, 245, 245, 1);
+;
+        border: 1px solid rgba(217, 217, 217, 1);
+
+        cursor: default;
+
+        @include button-color(rgba(0, 0, 0, 0.25));
+    }
+}
+
+%button-dashed-common {
+    @include mixins.hover {
+        @include button-color(rgba(35, 120, 4, 1));
+    }
+
+    &:active {
+        @include button-color(rgba(35, 120, 4, 1));
+    }
+
+    &:disabled {
+        border-color: 1px dashed rgba(217, 217, 217, 1);
+        cursor: default;
+
+        @include button-color(rgba(35, 120, 4, 1));
+    }
+}
+
+.dashed {
+    border: 1px dashed rgba(35, 120, 4, 1);
+    background-color: white;
+
+    @include button-color(rgba(35, 120, 4, 1));
+
+    @extend %button-dashed-common;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+            border-color: 2px dashed rgba(35, 120, 4, 1);
+            background-color: #ffffff;
+        }
+
+        &:active {
+            border-color: 2px dashed rgba(35, 120, 4, 1);
+            background-color: #ffffff;
+        }
+    }
+}
+
+.dashed-neutral {
+    border: 1px dashed rgba(35, 120, 4, 1);
+    background-color: white;
+
+    @include button-color(rgba(35, 120, 4, 1));
+
+    @extend %button-dashed-common;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+            border-color: 2px dashed rgba(35, 120, 4, 1);
+            background-color: #ffffff;
+        }
+
+        &:active {
+            border-color: 2px dashed rgba(35, 120, 4, 1);
+            background-color: #ffffff;
+        }
+    }
+}
+
+.dashed-danger {
+    border: 1px dashed rgba(255, 77, 79, 1);
+    background-color: white;
+
+    @include button-color(rgba(255, 77, 79, 1));
+
+    @extend %button-dashed-common;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+            border:  1px dashed rgba(255, 120, 117, 1);
+            background-color: #ffffff;
+        }
+         @include button-color(rgba(255, 77, 79, 1));
+
+        &:active {
+            border: 1px dashed rgba(255, 77, 79, 1);
+            background-color: white;
+        }
+    }
+}
+
+.text {
+    display: inline-block;
+    min-width: auto;
+    border: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 20px;
+    border-radius: 2px;
+
+    svg {
+        fill: colors.$neutral-10;
+    }
+
+    @include mixins.hover {
+        background-color:rgba(250, 250, 250, 1);
+        color: rgba(0, 0, 0, 0.85);
+
+        svg {
+            fill: colors.$primary-35;
+        }
+    }
+
+    &:active {
+        color: rgba(0, 0, 0, 0.85);
+
+        svg {
+            fill: colors.$primary-25;
+        }
+    }
+
+    &:disabled {
+        background: rgba(223, 208, 208, 0.25);
+        cursor: default;
+
+        svg {
+            fill: colors.$neutral-80;
+        }
+    }
+}
+
+.text-danger {
+    display: inline-block;
+    min-width: auto;
+    border: none;
+    background-color: transparent;
+    color:  rgba(255, 77, 79, 1);
+    line-height: 20px;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+       color:  rgba(255, 77, 79, 1);
+        }
+         @include button-color(rgba(255, 77, 79, 1));
+
+        &:active {
+color:  rgba(255, 77, 79, 1);
+        }
+    }
+}
+
+.small {
+    height: 40px;
+    padding: 0 units.$space-l;
+
+    .loader {
+        @include loaderSize($loader-s);
+    }
+}
+
+.medium {
+    height: 40px;
+    padding: 0 units.$space-l;
+
+    @include responsive.media-up(responsive.$tablet) {
+        height: 48px;
+        padding: 0 units.$space-xl;
+    }
+
+    @include responsive.media-up(responsive.$xl) {
+        height: 56px;
+        padding: 0 units.$space-3xl;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .loader {
+        @include loaderSize($loader-s);
+
+        @include responsive.media-up(responsive.$xs) {
+            @include loaderSize($loader-m);
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            @include loaderSize($loader-l);
+        }
+    }
+}
+
+.large {
+    height: 48px;
+    padding: 0 units.$space-xl;
+
+    @include responsive.media-up(responsive.$tablet) {
+        height: 56px;
+        padding: 0 units.$space-3xl;
+    }
+
+    @include responsive.media-up(responsive.$xl) {
+        font-size: 16px;
+        line-height: 24px;
+        height: 64px;
+    }
+
+    .loader {
+        @include loaderSize($loader-m);
+
+        @include responsive.media-up(responsive.$xs) {
+            @include loaderSize($loader-l);
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            @include loaderSize($loader-xl);
+        }
+    }
+}
+
+%button-link-common {
+    min-width: auto;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    height: fit-content;
+
+    &:disabled {
+        cursor: default;
+
+        @include button-color( rgba(0, 0, 0, 0.25));
+    }
+}
+
+.link {
+    @include button-color( rgba(35, 120, 4, 1));
+
+    @extend %button-link-common;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+            @include button-color(rgba(35, 120, 4, 1));
+        }
+
+        &:active {
+            @include button-color(rgba(35, 120, 4, 1));
+        }
+    }
+}
+
+.link-neutral {
+    @include button-color(rgba(35, 120, 4, 1));
+
+    @extend %button-link-common;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+            @include button-color(rgba(35, 120, 4, 1));
+        }
+
+        &:active {
+            @include button-color(rgba(35, 120, 4, 1));
+        }
+    }
+}
+
+.link-danger {
+    @include button-color( rgba(255, 77, 79, 1));
+
+    @extend %button-link-common;
+
+    &:not(:disabled) {
+        @include mixins.hover {
+            @include button-color( rgba(255, 120, 117, 1));
+        }
+
+        &:active {
+            @include button-color(colors.$danger-25);
+        }
+    }
+}
+
+.circle {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    border-color: colors.$neutral-100;
+    background-color: colors.$neutral-100;
+    border-radius: 50%;
+    box-shadow: shadows.$shadow-l;
+
+    @include button-color(colors.$neutral-10);
+
+    @include mixins.hover {
+        background-color: colors.$neutral-97;
+    }
+
+    &:active {
+        border-color: colors.$neutral-97;
+        background-color: colors.$neutral-97;
+        box-shadow: none;
+    }
+
+    &:disabled {
+        background-color: colors.$neutral-93;
+        box-shadow: none;
+        cursor: default;
+
+        @include button-color(colors.$neutral-70);
+    }
+
+    @include responsive.media-up(responsive.$desktop) {
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+    }
+
+    @include responsive.media-up(responsive.$xl) {
+        width: 48px;
+        min-width: 48px;
+        height: 48px;
+    }
+}
+
+.icon {
+    display: inline-flex;
+    border: none;
+    min-width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+
+    svg {
+        width: inherit;
+        height: inherit;
+    }
+
+    @include button-color(colors.$neutral-50);
+
+    &:not([disabled]) {
+        @include mixins.hover {
+            @include button-color(colors.$neutral-10);
+        }
+
+        &:focus-visible {
+            @include button-color(colors.$neutral-10);
+        }
+
+        &:active {
+            @include button-color(colors.$neutral-30);
+        }
+    }
+
+    &:disabled {
+        cursor: default;
+
+        @include button-color(colors.$neutral-70);
+    }
+}

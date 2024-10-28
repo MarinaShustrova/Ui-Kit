@@ -1,0 +1,25 @@
+@use '../../colors';
+@use '../../z-index';
+@use '../../functions';
+
+$layers-order: 'layout', 'dropdown', 'tooltip', 'overlay', 'notification', 'modal';
+
+.layer {
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    $i: 0;
+    @each $layer in $layers-order {
+        &.#{$layer} {
+            $i: $i + 1;
+            top: #{(40 * $i)}px;
+            left: #{(30 * $i)}px;
+            z-index: z-index.zIndex($layer);
+            color: colors.$neutral-100;
+            background-color: functions.getShade(colors.$neutral-70, $i * 2);
+        }
+    }
+}

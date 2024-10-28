@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use 'breakpoints' as *;
+
+@mixin media-up($lower) {
+    @if meta.type-of($lower) == 'number' {
+        @media (min-width: $lower) {
+            @content;
+        }
+    }
+}
+
+$mobile: map.get($breakpoints, 'xxs', 'min-width');
+$xxs: map.get($breakpoints, 'xxs', 'min-width');
+
+$tablet: map.get($breakpoints, 'xs', 'min-width');
+$xs: map.get($breakpoints, 'xs', 'min-width');
+$s: map.get($breakpoints, 's', 'min-width');
+
+$desktop: map.get($breakpoints, 'm', 'min-width');
+$m: map.get($breakpoints, 'm', 'min-width');
+$l: map.get($breakpoints, 'l', 'min-width');
+$xl: map.get($breakpoints, 'xl', 'min-width');
+$xxl: map.get($breakpoints, 'xxl', 'min-width');

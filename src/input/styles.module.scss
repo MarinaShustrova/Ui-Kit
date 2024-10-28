@@ -1,0 +1,273 @@
+@use '../theme/units';
+@use '../theme/colors';
+@use '../theme/mixins';
+@use '../theme/fonts';
+@use '../grid/responsive';
+
+.container {
+    position: relative;
+    display: flex;
+}
+
+.label {
+    position: relative;
+    height: 100%;
+    flex-grow: 1;
+    cursor: text;
+
+    &.disabled {
+        cursor: default;
+    }
+
+    &.light-ellipsis::after {
+        @include mixins.ellipsis-gradient(colors.$neutral-100);
+
+        background: linear-gradient(270deg, colors.$neutral-100 15%, rgba(colors.$neutral-100, 0));
+        width: 92px;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        height: auto;
+    }
+
+    &.gray-ellipsis::after {
+        @include mixins.ellipsis-gradient(colors.$neutral-97);
+
+        background: linear-gradient(270deg, colors.$neutral-97 15%, rgba(colors.$neutral-97, 0));
+        width: 92px;
+        top: 3px;
+        right: 3px;
+        bottom: 3px;
+        height: auto;
+    }
+}
+
+.label-inner-container {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.label-text {
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    text-align: left;
+
+    position: absolute;
+    top: 50%;
+    right: units.$space-m;
+    left: units.$space-m;
+    overflow: hidden;
+    color: rgba(0, 0, 0, 0.25);
+    font-weight: fonts.$weight-regular;
+    transform: translateY(-50%);
+    transition: all 0.2s ease 0s;
+    white-space: nowrap;
+
+    @include responsive.media-up(responsive.$xl) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &.floated {
+        top: 8px;
+        font-size: 10px;
+        line-height: 14px;
+        transform: none;
+        right: 16px;
+
+        @include responsive.media-up(responsive.$tablet) {
+            top: 10px;
+            font-size: 12px;
+            line-height: 16px;
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            top: 12px;
+            font-size: 14px;
+        }
+    }
+
+    &.disabled {
+        color: colors.$neutral-30;
+    }
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 units.$space-m;
+    border: 1px solid rgba(217, 217, 217, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 2px;
+    color: black;
+    font-size: 14px;
+    font-weight: fonts.$weight-regular;
+    line-height: 16px;
+    outline: none;
+    transition: border-color 0.2s ease 0s;
+
+    @include responsive.media-up(responsive.$tablet) {
+        height: 56px;
+    }
+
+    @include responsive.media-up(responsive.$xl) {
+        height: 64px;
+    }
+
+    @include mixins.hover {
+        border-color: rgba(56, 158, 13, 1);
+    }
+
+    @include responsive.media-up(responsive.$xl) {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    &:focus {
+        border-color: rgba(56, 158, 13, 1);
+    }
+
+    &.error {
+        border-color: rgba(255, 77, 79, 1);
+    }
+
+    &::placeholder {
+        color: colors.$neutral-50;
+        opacity: 1;
+    }
+
+    &:disabled {
+        border-color: rgba(217, 217, 217, 1);
+        background-color: rgba(217, 217, 217, 1);
+        color: colors.$neutral-30;
+        opacity: 1;
+        -webkit-text-fill-color: rgba(217, 217, 217, 1);
+    }
+
+    &:-webkit-autofill {
+        @include mixins.hover {
+            border-radius: units.$border-radius-m;
+            box-shadow: 0 0 0 1000px colors.$neutral-100 inset;
+        }
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        border-radius: units.$border-radius-m;
+        box-shadow: 0 0 0 1000px colors.$neutral-100 inset;
+    }
+
+    &.labeled {
+        padding: 26px units.$space-m 8px;
+
+        @include responsive.media-up(responsive.$tablet) {
+            padding: 26px units.$space-m 10px;
+        }
+    }
+}
+
+.left-icon {
+    left: 0;
+    padding: 0 units.$space-s 0 units.$space-m;
+
+    @include responsive.media-up(responsive.$desktop) {
+        padding: 0;
+        left: 16px;
+    }
+}
+
+.right-icon {
+    right: 0;
+    padding: 0 units.$space-m 0 units.$space-s;
+
+    @include responsive.media-up(responsive.$desktop) {
+        padding: 0;
+        right: 20px;
+    }
+}
+
+.tip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(calc(100% + 2px));
+
+    &.disabled {
+        color: colors.$neutral-30;
+    }
+}
+
+.with-left-icon {
+    .label-text {
+        left: 44px;
+
+        @include responsive.media-up(responsive.$tablet) {
+            left: 46px;
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            left: 48px;
+        }
+    }
+
+    .input {
+        padding-left: 44px;
+
+        @include responsive.media-up(responsive.$tablet) {
+            padding-left: 46px;
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            padding-left: 48px;
+        }
+    }
+}
+
+.with-right-icon {
+    .input {
+        padding-right: 44px;
+
+        @include responsive.media-up(responsive.$tablet) {
+            padding-right: 46px;
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            padding-right: 48px;
+        }
+    }
+
+    .floated-label-blur {
+        &.light-ellipsis::after {
+            background: linear-gradient(
+                270deg,
+                colors.$neutral-100 45%,
+                rgba(colors.$neutral-100, 0)
+            );
+        }
+
+        &.gray-ellipsis::after {
+            background: linear-gradient(
+                270deg,
+                colors.$neutral-97 45%,
+                rgba(colors.$neutral-97, 0)
+            );
+        }
+    }
+
+    .label-text.floated {
+        right: 44px;
+
+        @include responsive.media-up(responsive.$tablet) {
+            right: 46px;
+        }
+
+        @include responsive.media-up(responsive.$xl) {
+            right: 48px;
+        }
+    }
+}

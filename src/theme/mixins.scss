@@ -1,0 +1,79 @@
+@use '../grid/responsive';
+
+@mixin box() {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    min-width: 140px;
+    min-height: 56px;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+@mixin square($height, $width: null) {
+    height: $height;
+    min-height: $height;
+    width: $height;
+    min-width: $height;
+
+    @if ($width) {
+        width: $width;
+        min-width: $width;
+    }
+}
+
+@mixin circle($height, $width: null) {
+    @include square($height, $width);
+    border-radius: $height * 0.5;
+}
+
+@mixin mark {
+    height: calc(50% + 2px);
+    width: calc(50% + 2px);
+    border-radius: 50%;
+}
+
+@mixin ellipsis-gradient($color) {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 48px;
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(270deg, $color 0%, rgba($color, 0));
+    pointer-events: none;
+}
+
+@mixin ellipsis-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin ellipsis-text-multiline($line-count: 2) {
+    display: -webkit-box;
+
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
+    @include ellipsis-text;
+
+    white-space: initial;
+}
+
+@mixin hover {
+    @include responsive.media-up(responsive.$s) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin focus {
+    @include responsive.media-up(responsive.$s) {
+        &:focus {
+            @content;
+        }
+    }
+}

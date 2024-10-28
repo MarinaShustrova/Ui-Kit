@@ -1,0 +1,68 @@
+@use '../../grid/responsive';
+
+.select {
+    width: 100%;
+
+    @include responsive.media-up(responsive.$tablet) {
+        width: 380px;
+    }
+}
+
+.select-container {
+    display: flex;
+
+    & .select:first-child {
+        margin-right: 20px;
+    }
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.amount {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.mobile-select-box {
+    margin-bottom: 20px;
+}
+
+.switch {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.listbox-geometry {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+
+    .top {
+        align-self: flex-start;
+
+        .select {
+            width: 100px;
+        }
+    }
+
+    .middle {
+        align-self: center;
+
+        .select {
+            width: 200px;
+        }
+    }
+
+    .bottom {
+        align-self: flex-end;
+
+        .select {
+            width: 300px;
+        }
+    }
+}

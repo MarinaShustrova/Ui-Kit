@@ -1,0 +1,13 @@
+@use '../../../theme/colors';
+@use '../../../grid/responsive';
+
+.tip {
+    color: #00000040;
+    cursor: default;
+    word-wrap: break-word;
+    width: 100%;
+
+    &.error {
+        color: rgba(255, 77, 79, 1);
+    }
+}

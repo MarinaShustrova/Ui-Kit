@@ -1,0 +1,16 @@
+@use '../../units';
+@use '../../colors';
+
+.accordion {
+    border: units.$border-width-s solid colors.$neutral-90;
+    border-radius: units.$border-radius-s;
+    padding: units.$space-s;
+
+    &:not(:last-child) {
+        margin-bottom: units.$space-l;
+    }
+}
+
+.table-row {
+    cursor: pointer;
+}

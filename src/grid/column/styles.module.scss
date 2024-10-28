@@ -1,0 +1,57 @@
+@use 'sass:map';
+@use 'sass:math';
+@use '../breakpoints' as *;
+@use '../responsive' as *;
+
+@function columnsWidth($columnWidth, $count) {
+    @return $columnWidth * $count;
+}
+
+.column {
+    flex: 1 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: 1px;
+    box-sizing: border-box;
+
+    &.width-auto {
+        flex: 1 0;
+    }
+
+    @each $breakpoint in map.keys($breakpoints) {
+        $breakpoint-config: map.get($breakpoints, $breakpoint);
+        $min-width: map.get($breakpoint-config, 'min-width');
+        $gutter: map.get($breakpoint-config, 'gutter');
+        $columns-count: map.get($breakpoint-config, 'columns');
+        $column-width: math.div(100%, $columns-count);
+
+        @include media-up($min-width) {
+            & {
+                padding-right: $gutter * 0.5;
+                padding-left: $gutter * 0.5;
+            }
+
+            &.width-#{$breakpoint}-auto {
+                flex: 1 0;
+            }
+
+            @for $i from 1 to $columns-count + 1 {
+                &.width-#{$breakpoint}-#{$i} {
+                    $width: columnsWidth($column-width, $i);
+
+                    flex: 0 0 auto;
+                    max-width: $width;
+                    width: $width;
+                }
+            }
+
+            @for $i from 0 to $columns-count {
+                &.offset-#{$breakpoint}-#{$i} {
+                    $offsetWidth: columnsWidth($column-width, $i);
+
+                    margin-left: $offsetWidth;
+                }
+            }
+        }
+    }
+}

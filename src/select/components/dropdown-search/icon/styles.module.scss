@@ -1,0 +1,28 @@
+@use '../../../../theme/colors';
+@use '../../../../theme/units';
+
+.chevron-icon {
+  fill: rgb(165, 161, 161) !important;
+  transform: rotateX(0deg) translateY(0);
+  transition: transform 0.2s ease 0s;
+
+  &.expanded {
+    transform: rotateX(180deg) translateY(1px);
+  }
+
+  &.disabled {
+    fill: colors.$neutral-50 !important;
+  }
+}
+
+.additional-option-label {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  margin-right: units.$space-xl;
+  white-space: nowrap;
+  &.disabled,
+  &.disabled * {
+    color: colors.$neutral-30;
+  }
+}

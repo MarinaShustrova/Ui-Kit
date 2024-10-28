@@ -1,0 +1,114 @@
+@use '../theme/mixins';
+@import '../theme/colors';
+
+$size-large: 24px;
+$size-medium: 20px;
+$size-small: 16px;
+
+.radio {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    min-height: 24px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    @include mixins.hover {
+        .checkmark {
+            border-color: $primary-85;
+        }
+    }
+
+    &.checked {
+        .checkmark {
+            border-width: 2px;
+            border-color: $primary-75;
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+
+        .checkmark {
+            border-color: $primary-75;
+            background-color: $neutral-80;
+        }
+
+        .label {
+            color: $neutral-99;
+        }
+    }
+
+    &.checked.disabled {
+        .checkmark {
+            border-color: red;
+            background-color: red;
+        }
+
+        .dot {
+            background-color: red;
+        }
+
+        .label {
+            color: $neutral-99;
+        }
+    }
+}
+
+.checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: calc(50% + 2px);
+    width: calc(50% + 2px);
+    border-radius: 50%;
+    border: 1px solid $primary-75;
+    background-color: $neutral-10;
+    transition: background-color, border-color 0.2s ease;
+
+    &.large {
+        @include mixins.circle($size-large);
+    }
+
+    &.medium {
+        @include mixins.circle($size-medium);
+    }
+
+    &.small {
+        @include mixins.circle($size-small);
+    }
+
+    .dot {
+        height: calc(50% + 2px);
+        width: calc(50% + 2px);
+        border-radius: 50%;
+        position: absolute;
+        background-color: $primary-75;
+        transition: background-color 0.2s ease;
+    }
+
+    .input {
+        position: absolute;
+        margin: 0;
+        opacity: 0;
+        cursor: inherit;
+    }
+}
+
+.label {
+    &.small {
+        margin-left: 8px;
+    }
+
+    &.medium {
+        margin-left: 10px;
+    }
+
+    &.large {
+        margin-left: 12px;
+    }
+}

@@ -1,0 +1,112 @@
+@use '../../mixins';
+@use '../../units';
+@use '../../colors';
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.heading {
+    width: 100%;
+    text-align: center;
+    margin-bottom: units.$space-4xl;
+}
+
+%base-component {
+    cursor: pointer;
+    border: units.$border-width-s solid colors.$neutral-100;
+}
+
+.box {
+    @include mixins.box;
+
+    @extend %base-component;
+    background-color: colors.$neutral-100;
+}
+
+.square {
+    @include mixins.square(200px);
+
+    @extend %base-component;
+}
+
+.circle {
+    @include mixins.circle(200px);
+
+    @extend %base-component;
+}
+
+.ellipsis-gradient-container {
+    width: 500px;
+    height: 20px;
+    position: relative;
+    border: units.$border-width-s solid colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    cursor: pointer;
+}
+
+.ellipsis-gradient {
+    @include mixins.ellipsis-gradient(#ccc);
+
+    @extend %base-component;
+}
+
+.ellipsis-text {
+    @include mixins.ellipsis-text;
+
+    @extend %base-component;
+    background-color: transparent;
+    border: units.$border-width-s solid colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    width: 200px;
+    height: 50px;
+    padding: units.$space-s;
+}
+
+.ellipsis-text-multiline {
+    @include mixins.ellipsis-text-multiline;
+
+    @extend %base-component;
+    background-color: transparent;
+    border: units.$border-width-s solid colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    width: 200px;
+    height: 60px;
+    padding: units.$space-s;
+}
+
+.hover {
+    @include mixins.hover {
+        border-color: red;
+    }
+
+    @extend %base-component;
+    background-color: transparent;
+    border: units.$border-width-s solid colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    width: 200px;
+    height: 50px;
+}
+
+.focus {
+    @include mixins.focus {
+        border-color: red;
+    }
+
+    @extend %base-component;
+    background-color: transparent;
+    border: units.$border-width-s solid colors.$neutral-100;
+    border-radius: units.$border-radius-s;
+    width: 200px;
+    height: 50px;
+}

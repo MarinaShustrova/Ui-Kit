@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use 'breakpoints' as *;
+@use 'responsive' as *;
+
+.grid {
+    margin: 0 auto;
+
+    @each $breakpoint in map.keys($breakpoints) {
+        $breakpoint-config: map.get($breakpoints, $breakpoint);
+
+        $min-width: map.get($breakpoint-config, 'min-width');
+        $margin: map.get($breakpoint-config, 'margin');
+
+        @include media-up($min-width) {
+            & {
+                padding-left: $margin;
+                padding-right: $margin;
+            }
+        }
+    }
+}

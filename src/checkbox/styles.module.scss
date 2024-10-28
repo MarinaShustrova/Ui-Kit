@@ -1,0 +1,109 @@
+@use '../theme/mixins';
+@use '../theme/colors';
+
+$size-large: 24px;
+$size-medium: 20px;
+$size-small: 16px;
+
+.checkbox {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    min-height: 24px;
+    box-sizing: border-box;
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    @include mixins.hover {
+        .checkmark {
+            border-color: colors.$neutral-50;
+        }
+    }
+
+    &.checked {
+        .checkmark {
+            border-color: colors.$neutral-50;
+            background-color: colors.$neutral-50;
+        }
+
+        .icon {
+            fill: colors.$neutral-50;
+            height: 17px;
+            width: 17px;
+        }
+    }
+
+    &.disabled {
+        cursor: default;
+
+        .checkmark {
+            border-color: #ffffff;
+            background-color: colors.$neutral-50;
+        }
+
+        .label {
+            color: colors.$neutral-50;
+        }
+    }
+
+    &.checked.disabled {
+        .icon {
+            fill: colors.$neutral-50;
+        }
+
+        .label {
+            color: colors.$neutral-50;
+        }
+    }
+}
+
+.checkmark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 4px;
+    border: 1px solid colors.$neutral-80;
+    background-color: #ffffff;
+    transition: border-color 0.2s ease;
+
+    &.small {
+        @include mixins.square($size-small);
+    }
+
+    &.medium {
+        @include mixins.square($size-medium);
+    }
+
+    &.large {
+        @include mixins.square($size-large);
+    }
+
+    .icon {
+        position: absolute;
+        fill: transparent;
+    }
+
+    .input {
+        position: absolute;
+        margin: 0;
+        opacity: 0;
+        cursor: inherit;
+    }
+}
+
+.label {
+    &.small {
+        margin-left: 8px;
+    }
+
+    &.medium {
+        margin-left: 10px;
+    }
+
+    &.large {
+        margin-left: 12px;
+    }
+}

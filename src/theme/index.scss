@@ -1,0 +1,22 @@
+@import './reset';
+@import './scrollbar';
+@import './fonts';
+
+html,
+body,
+#root {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: $font-family;
+    line-height: 1.43;
+
+    background: linear-gradient(134.83deg, #f1f4f4 -3.76%, rgba(241, 244, 244, 0) 19.35%),
+        radial-gradient(35.11% 35.11% at -11.04% 2.17%, #d7f2d8 0%, rgba(215, 242, 216, 0) 100%),
+        radial-gradient(40.22% 40.22% at 39.79% 58.11%, #ffecdb 0%, rgba(255, 236, 219, 0) 100%),
+        radial-gradient(22.43% 57.42% at 103.19% -6.5%, #ffecdb 0%, rgba(255, 236, 219, 0) 100%),
+        radial-gradient(47.33% 47.33% at 73.12% -5.17%, #d7f2d8 0%, rgba(215, 242, 216, 0) 100%),
+        #f6f7f8;
+}

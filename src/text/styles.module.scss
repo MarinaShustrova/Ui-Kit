@@ -1,0 +1,83 @@
+@use '../theme/colors';
+@use '../theme/fonts';
+@use '../grid/responsive' as *;
+
+$devices: (
+    'mobile': $mobile,
+    'tablet': $tablet,
+    'desktop': $desktop,
+    'xl': $xl,
+);
+
+@mixin responsive-text($device, $font-size, $line-height-short, $line-height-long) {
+    @if $device == 'mobile' {
+        &-short {
+            font-size: #{$font-size}px;
+            line-height: #{$line-height-short}px;
+        }
+        &-long {
+            font-size: #{$font-size}px;
+            line-height: #{$line-height-long}px;
+        }
+    } @else {
+        @include media-up(map-get($devices, $device)) {
+            &-short {
+                font-size: #{$font-size}px;
+                line-height: #{$line-height-short}px;
+            }
+            &-long {
+                font-size: #{$font-size}px;
+                line-height: #{$line-height-long}px;
+            }
+        }
+    }
+}
+
+.text {
+    display: inline-block;
+    color: colors.$neutral-99;
+}
+
+.size {
+    &-xsmall {
+        @include responsive-text('mobile', 10, 14, 14);
+        @include responsive-text('tablet', 12, 14, 14);
+        @include responsive-text('desktop', 12, 14, 14);
+        @include responsive-text('xl', 14, 16, 16);
+    }
+
+    &-small {
+        @include responsive-text('mobile', 12, 14, 14);
+        @include responsive-text('tablet', 12, 16, 16);
+        @include responsive-text('desktop', 12, 16, 16);
+        @include responsive-text('xl', 14, 22, 22);
+    }
+
+    &-medium {
+        @include responsive-text('mobile', 14, 16, 22);
+        @include responsive-text('tablet', 14, 16, 22);
+        @include responsive-text('desktop', 14, 16, 22);
+        @include responsive-text('xl', 16, 20, 24);
+    }
+
+    &-large {
+        @include responsive-text('mobile', 14, 22, 22);
+        @include responsive-text('tablet', 16, 24, 24);
+        @include responsive-text('desktop', 16, 24, 24);
+        @include responsive-text('xl', 18, 26, 26);
+    }
+}
+
+.weight {
+    &-regular {
+        font-weight: fonts.$weight-regular;
+    }
+
+    &-medium {
+        font-weight: fonts.$weight-medium;
+    }
+
+    &-bold {
+        font-weight: fonts.$weight-bold;
+    }
+}
